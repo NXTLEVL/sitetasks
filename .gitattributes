@@ -1,0 +1,36 @@
+# Auto-detect text files and normalize to LF on commit.
+# Without this, Windows checkouts (with core.autocrlf=true) convert *.erb and
+# other source files to CRLF, which causes the Primer/Rails template compiler
+# to emit broken Ruby (the embedded \r mangles compiled strings) and shell
+# scripts to fail with "no such file or directory" when exec'd in containers.
+* text=auto eol=lf
+
+# Common binary types — be explicit so git never accidentally normalizes them.
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.webp      binary
+*.svg       text eol=lf
+*.pdf       binary
+*.zip       binary
+*.tar       binary
+*.gz        binary
+*.tgz       binary
+*.bz2       binary
+*.7z        binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.otf       binary
+*.eot       binary
+*.mp3       binary
+*.mp4       binary
+*.mov       binary
+*.so        binary
+*.dylib     binary
+*.dll       binary
+*.exe       binary
+*.class     binary
+*.jar       binary
